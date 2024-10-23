@@ -18,7 +18,7 @@ void draw()
 }  
 class Bacteria    
 {     
-  int myX, myY, myColor,;
+  int myX, myY, myColor;
   Bacteria(){
     myX = (int)(Math.random() * 501);
     myY = (int)(Math.random() * 501);
