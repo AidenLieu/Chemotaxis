@@ -13,7 +13,10 @@ void draw()
   background(0);
   for(int i = 0; i < colony.length; i++){
     colony[i].move();
-    colony[i].show();    
+    colony[i].show();   
+    if(mousePressed == true){
+      colony[i].explode();  
+  }
   }
 }  
 class Bacteria    
@@ -26,6 +29,16 @@ class Bacteria
   void move(){
     myX = myX + (int)(Math.random() * 5) - 2;
     myY = myY + (int)(Math.random() * 5) - 2;
+  }
+  void explode(){
+   if(mouseX > myX)
+       myX -= 10;
+    else if (mouseY > myY)
+       myY -= 10;
+    if(mouseX < myX)
+       myX += 10;
+    else if (mouseY < myY)
+       myY += 10;
   }
   void show(){
     myColor = color(255);
